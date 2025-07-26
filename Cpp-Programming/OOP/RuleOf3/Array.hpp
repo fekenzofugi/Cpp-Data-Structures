@@ -1,5 +1,6 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
+#include <vector>
 
 class Array {
   public:
@@ -16,7 +17,7 @@ class Array {
     void PrintingData();
     void SetData(int index, int value);
   private:
-    int* data;
+    std::vector<int> data;
 };
 
 #endif

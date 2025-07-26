@@ -3,23 +3,21 @@
 
 Array::Array() {
   std::cout << "Constructor" << std::endl;
-  data = new int[10];
   for(int i = 0; i<10; i++) {
-    data[i] = i*i;
+    data.push_back(i);
   }
 }
 
 Array::~Array() {
-  delete[] data;
+  //delete[] data;
 }
 
 // Copy Constructor
 // Array myNewArray = someExistingArray
 Array::Array(const Array& rhs){
   std::cout << "Copy Constructor" << std::endl;
-  data = new int[10];
   for(int i=0; i<10; i++) {
-    data[i] = rhs.data[i];
+    data.push_back(rhs.data[i]);
   }
 }
 
@@ -30,10 +28,10 @@ Array& Array::operator=(const Array& rhs) {
   if(&rhs == this) { // this is the current instance of the class.
     return *this;
   }
-  delete[] data;
-  data = new int[10];
+
+  data.clear();
   for(int i=0; i<10; i++) {
-    data[i] = rhs.data[i];
+    data.push_back(rhs.data[i]);
   }
   return *this;
 }
