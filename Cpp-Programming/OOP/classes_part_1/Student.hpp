@@ -7,6 +7,7 @@ class Student { // Student - Our new user defined type
     // Special Actions
     // Action - Constructor
     Student();
+    Student(std::string name);
 
     // Special Actions
     // Action - Destructor
